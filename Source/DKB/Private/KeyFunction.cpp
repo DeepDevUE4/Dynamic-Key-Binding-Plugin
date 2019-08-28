@@ -4,7 +4,6 @@
 
 */
 
-
 #include "KeyFunction.h"
 
 KeyFunction::KeyFunction()

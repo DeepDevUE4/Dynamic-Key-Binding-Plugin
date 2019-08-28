@@ -10,6 +10,8 @@
 #include "Runtime\Engine\Classes\GameFramework\InputSettings.h"
 #include "UObject/ObjectMacros.h"
 #include "UObject/Object.h"
+#include "Runtime/Engine/Classes/GameFramework/PlayerController.h"
+#include "DKBBPLibrary.h"
 
 /**
  * 
@@ -20,7 +22,7 @@ class DKB_API KeyFunction
 public:
 	KeyFunction();
 
-	void SetActionKey(FName ActName, FKey NewKey)
+	void SetActionKey(FName ActName, FKey NewKey, bool Shift, bool Ctrl, bool Alt, bool Cmd)
 	{
 		UInputSettings *Settings = const_cast<UInputSettings*>(GetDefault<UInputSettings>());
 		if (!Settings) { return; }
@@ -33,38 +35,38 @@ public:
 			Settings->RemoveActionMapping(OutMappings[ActionIndex]);
 		}
 			
-		Settings->AddActionMapping(FInputActionKeyMapping(ActName, NewKey));
+		Settings->AddActionMapping(FInputActionKeyMapping(ActName, NewKey, Shift ,Ctrl ,Alt ,Cmd));
 		Settings->SaveKeyMappings();
 
 	}
 
-	void AddActionKey(FName ActName, FKey NewKey)
+	void AddActionKey(FName ActName, FKey NewKey, bool Shift, bool Ctrl, bool Alt, bool Cmd)
 	{
 		UInputSettings *Settings = const_cast<UInputSettings*>(GetDefault<UInputSettings>());
 		if (!Settings) { return; }
 
-		Settings->AddActionMapping(FInputActionKeyMapping(ActName, NewKey));
+		Settings->AddActionMapping(FInputActionKeyMapping(ActName, NewKey, Shift, Ctrl, Alt, Cmd));
 		Settings->SaveKeyMappings();
 	}
 
 
 
-	void RemoveActionKey(FName ActName, FKey Key)
+	void RemoveActionKey(FName ActName, FKey Key, bool Shift, bool Ctrl, bool Alt, bool Cmd)
 	{
 		UInputSettings *Settings = const_cast<UInputSettings*>(GetDefault<UInputSettings>());
 		if (!Settings) { return; }
 
-		Settings->RemoveActionMapping(FInputActionKeyMapping(ActName, Key));
+		Settings->RemoveActionMapping(FInputActionKeyMapping(ActName, Key, Shift, Ctrl, Alt, Cmd));
 		Settings->SaveKeyMappings();
 	}
 
-	void ReplaceActionKey(FName ActName, FKey OldKey, FKey NewKey)
+	void ReplaceActionKey(FName ActName, FKey OldKey,bool Shift,bool Ctrl , bool Alt , bool Cmd, FKey NewKey, bool New_Shift, bool New_Ctrl, bool New_Alt, bool New_Cmd)
 	{
 		UInputSettings *Settings = const_cast<UInputSettings*>(GetDefault<UInputSettings>());
 		if (!Settings) { return; }
 
-		Settings->RemoveActionMapping(FInputActionKeyMapping(ActName, OldKey));
-		Settings->AddActionMapping(FInputActionKeyMapping(ActName, NewKey));
+		Settings->RemoveActionMapping(FInputActionKeyMapping(ActName, OldKey,Shift, Ctrl, Alt, Cmd));
+		Settings->AddActionMapping(FInputActionKeyMapping(ActName, NewKey, New_Shift, New_Ctrl, New_Alt, New_Cmd));
 		Settings->SaveKeyMappings();
 	}
 
@@ -115,6 +117,8 @@ public:
 		Settings->AddAxisMapping(FInputAxisKeyMapping(AxName, NewKey));
 		Settings->SaveKeyMappings();
 	}
+
+
 
 	~KeyFunction();
 

@@ -1,4 +1,8 @@
-// Some copyright should be here...
+/*
+
+	By DeepDev
+
+*/
 
 using UnrealBuildTool;
 

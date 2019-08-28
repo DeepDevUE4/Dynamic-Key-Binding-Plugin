@@ -14,7 +14,7 @@ struct FKey;
 #endif
 #define DKB_DKBBPLibrary_generated_h
 
-#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_29_RPC_WRAPPERS \
+#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_12_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execReplaceAxisKey) \
 	{ \
@@ -61,10 +61,18 @@ struct FKey;
 	{ \
 		P_GET_PROPERTY(UNameProperty,Z_Param_ActName); \
 		P_GET_STRUCT(FKey,Z_Param_OldKey); \
+		P_GET_UBOOL(Z_Param_Alt); \
+		P_GET_UBOOL(Z_Param_Cmd); \
+		P_GET_UBOOL(Z_Param_Shift); \
+		P_GET_UBOOL(Z_Param_Ctrl); \
 		P_GET_STRUCT(FKey,Z_Param_NewKey); \
+		P_GET_UBOOL(Z_Param_New_Alt); \
+		P_GET_UBOOL(Z_Param_New_Cmd); \
+		P_GET_UBOOL(Z_Param_New_Shift); \
+		P_GET_UBOOL(Z_Param_New_Ctrl); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		UDKBBPLibrary::ReplaceActionKey(Z_Param_ActName,Z_Param_OldKey,Z_Param_NewKey); \
+		UDKBBPLibrary::ReplaceActionKey(Z_Param_ActName,Z_Param_OldKey,Z_Param_Alt,Z_Param_Cmd,Z_Param_Shift,Z_Param_Ctrl,Z_Param_NewKey,Z_Param_New_Alt,Z_Param_New_Cmd,Z_Param_New_Shift,Z_Param_New_Ctrl); \
 		P_NATIVE_END; \
 	} \
  \
@@ -72,9 +80,13 @@ struct FKey;
 	{ \
 		P_GET_PROPERTY(UNameProperty,Z_Param_ActName); \
 		P_GET_STRUCT(FKey,Z_Param_Key); \
+		P_GET_UBOOL(Z_Param_Alt); \
+		P_GET_UBOOL(Z_Param_Cmd); \
+		P_GET_UBOOL(Z_Param_Shift); \
+		P_GET_UBOOL(Z_Param_Ctrl); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		UDKBBPLibrary::RemoveActionKey(Z_Param_ActName,Z_Param_Key); \
+		UDKBBPLibrary::RemoveActionKey(Z_Param_ActName,Z_Param_Key,Z_Param_Alt,Z_Param_Cmd,Z_Param_Shift,Z_Param_Ctrl); \
 		P_NATIVE_END; \
 	} \
  \
@@ -82,9 +94,13 @@ struct FKey;
 	{ \
 		P_GET_PROPERTY(UNameProperty,Z_Param_ActName); \
 		P_GET_STRUCT(FKey,Z_Param_NewKey); \
+		P_GET_UBOOL(Z_Param_Alt); \
+		P_GET_UBOOL(Z_Param_Cmd); \
+		P_GET_UBOOL(Z_Param_Shift); \
+		P_GET_UBOOL(Z_Param_Ctrl); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		UDKBBPLibrary::AddActionKey(Z_Param_ActName,Z_Param_NewKey); \
+		UDKBBPLibrary::AddActionKey(Z_Param_ActName,Z_Param_NewKey,Z_Param_Alt,Z_Param_Cmd,Z_Param_Shift,Z_Param_Ctrl); \
 		P_NATIVE_END; \
 	} \
  \
@@ -92,14 +108,18 @@ struct FKey;
 	{ \
 		P_GET_PROPERTY(UNameProperty,Z_Param_ActName); \
 		P_GET_STRUCT(FKey,Z_Param_NewKey); \
+		P_GET_UBOOL(Z_Param_Alt); \
+		P_GET_UBOOL(Z_Param_Cmd); \
+		P_GET_UBOOL(Z_Param_Shift); \
+		P_GET_UBOOL(Z_Param_Ctrl); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		UDKBBPLibrary::SetActionKey(Z_Param_ActName,Z_Param_NewKey); \
+		UDKBBPLibrary::SetActionKey(Z_Param_ActName,Z_Param_NewKey,Z_Param_Alt,Z_Param_Cmd,Z_Param_Shift,Z_Param_Ctrl); \
 		P_NATIVE_END; \
 	}
 
 
-#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_29_RPC_WRAPPERS_NO_PURE_DECLS \
+#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execReplaceAxisKey) \
 	{ \
@@ -146,10 +166,18 @@ struct FKey;
 	{ \
 		P_GET_PROPERTY(UNameProperty,Z_Param_ActName); \
 		P_GET_STRUCT(FKey,Z_Param_OldKey); \
+		P_GET_UBOOL(Z_Param_Alt); \
+		P_GET_UBOOL(Z_Param_Cmd); \
+		P_GET_UBOOL(Z_Param_Shift); \
+		P_GET_UBOOL(Z_Param_Ctrl); \
 		P_GET_STRUCT(FKey,Z_Param_NewKey); \
+		P_GET_UBOOL(Z_Param_New_Alt); \
+		P_GET_UBOOL(Z_Param_New_Cmd); \
+		P_GET_UBOOL(Z_Param_New_Shift); \
+		P_GET_UBOOL(Z_Param_New_Ctrl); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		UDKBBPLibrary::ReplaceActionKey(Z_Param_ActName,Z_Param_OldKey,Z_Param_NewKey); \
+		UDKBBPLibrary::ReplaceActionKey(Z_Param_ActName,Z_Param_OldKey,Z_Param_Alt,Z_Param_Cmd,Z_Param_Shift,Z_Param_Ctrl,Z_Param_NewKey,Z_Param_New_Alt,Z_Param_New_Cmd,Z_Param_New_Shift,Z_Param_New_Ctrl); \
 		P_NATIVE_END; \
 	} \
  \
@@ -157,9 +185,13 @@ struct FKey;
 	{ \
 		P_GET_PROPERTY(UNameProperty,Z_Param_ActName); \
 		P_GET_STRUCT(FKey,Z_Param_Key); \
+		P_GET_UBOOL(Z_Param_Alt); \
+		P_GET_UBOOL(Z_Param_Cmd); \
+		P_GET_UBOOL(Z_Param_Shift); \
+		P_GET_UBOOL(Z_Param_Ctrl); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		UDKBBPLibrary::RemoveActionKey(Z_Param_ActName,Z_Param_Key); \
+		UDKBBPLibrary::RemoveActionKey(Z_Param_ActName,Z_Param_Key,Z_Param_Alt,Z_Param_Cmd,Z_Param_Shift,Z_Param_Ctrl); \
 		P_NATIVE_END; \
 	} \
  \
@@ -167,9 +199,13 @@ struct FKey;
 	{ \
 		P_GET_PROPERTY(UNameProperty,Z_Param_ActName); \
 		P_GET_STRUCT(FKey,Z_Param_NewKey); \
+		P_GET_UBOOL(Z_Param_Alt); \
+		P_GET_UBOOL(Z_Param_Cmd); \
+		P_GET_UBOOL(Z_Param_Shift); \
+		P_GET_UBOOL(Z_Param_Ctrl); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		UDKBBPLibrary::AddActionKey(Z_Param_ActName,Z_Param_NewKey); \
+		UDKBBPLibrary::AddActionKey(Z_Param_ActName,Z_Param_NewKey,Z_Param_Alt,Z_Param_Cmd,Z_Param_Shift,Z_Param_Ctrl); \
 		P_NATIVE_END; \
 	} \
  \
@@ -177,14 +213,18 @@ struct FKey;
 	{ \
 		P_GET_PROPERTY(UNameProperty,Z_Param_ActName); \
 		P_GET_STRUCT(FKey,Z_Param_NewKey); \
+		P_GET_UBOOL(Z_Param_Alt); \
+		P_GET_UBOOL(Z_Param_Cmd); \
+		P_GET_UBOOL(Z_Param_Shift); \
+		P_GET_UBOOL(Z_Param_Ctrl); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		UDKBBPLibrary::SetActionKey(Z_Param_ActName,Z_Param_NewKey); \
+		UDKBBPLibrary::SetActionKey(Z_Param_ActName,Z_Param_NewKey,Z_Param_Alt,Z_Param_Cmd,Z_Param_Shift,Z_Param_Ctrl); \
 		P_NATIVE_END; \
 	}
 
 
-#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_29_INCLASS_NO_PURE_DECLS \
+#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUDKBBPLibrary(); \
 	friend struct Z_Construct_UClass_UDKBBPLibrary_Statics; \
@@ -193,7 +233,7 @@ public: \
 	DECLARE_SERIALIZER(UDKBBPLibrary)
 
 
-#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_29_INCLASS \
+#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_12_INCLASS \
 private: \
 	static void StaticRegisterNativesUDKBBPLibrary(); \
 	friend struct Z_Construct_UClass_UDKBBPLibrary_Statics; \
@@ -202,7 +242,7 @@ public: \
 	DECLARE_SERIALIZER(UDKBBPLibrary)
 
 
-#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_29_STANDARD_CONSTRUCTORS \
+#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_12_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UDKBBPLibrary(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UDKBBPLibrary) \
@@ -215,7 +255,7 @@ private: \
 public:
 
 
-#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_29_ENHANCED_CONSTRUCTORS \
+#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_12_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UDKBBPLibrary(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -228,26 +268,26 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UDKBBPLibrary); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UDKBBPLibrary)
 
 
-#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_29_PRIVATE_PROPERTY_OFFSET
-#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_26_PROLOG
-#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_29_GENERATED_BODY_LEGACY \
+#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_12_PRIVATE_PROPERTY_OFFSET
+#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_9_PROLOG
+#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_29_PRIVATE_PROPERTY_OFFSET \
-	Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_29_RPC_WRAPPERS \
-	Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_29_INCLASS \
-	Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_29_STANDARD_CONSTRUCTORS \
+	Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_12_PRIVATE_PROPERTY_OFFSET \
+	Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_12_RPC_WRAPPERS \
+	Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_12_INCLASS \
+	Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_12_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_29_GENERATED_BODY \
+#define Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_29_PRIVATE_PROPERTY_OFFSET \
-	Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_29_RPC_WRAPPERS_NO_PURE_DECLS \
-	Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_29_INCLASS_NO_PURE_DECLS \
-	Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_29_ENHANCED_CONSTRUCTORS \
+	Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_12_PRIVATE_PROPERTY_OFFSET \
+	Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_12_INCLASS_NO_PURE_DECLS \
+	Users_EB_3D_Objects_DKB_HostProject_Plugins_DKB_Source_DKB_Public_DKBBPLibrary_h_12_ENHANCED_CONSTRUCTORS \
 static_assert(false, "Unknown access specifier for GENERATED_BODY() macro in class DKBBPLibrary."); \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
